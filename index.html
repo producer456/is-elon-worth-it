@@ -232,7 +232,7 @@
 <!-- MAP -->
 <section id="map"><div class="wrap">
   <h2>How much of America could you buy?</h2>
-  <p class="sub">An acre of US land averages very roughly <b>$4,000</b>. Tap a fortune — the highlighted area is how much of the whole country it would cover.</p>
+  <p class="sub">U.S. farmland averages about <b>$4,000 an acre</b> (USDA, 2024). Tap a fortune — the highlighted area is how much of the whole country it would cover at that price.</p>
   <div class="row" id="mapPills"></div>
   <div class="dotcard" style="margin-top:14px">
     <div class="mapstage"><canvas id="mapCanvas"></canvas></div>
@@ -241,7 +241,7 @@
       <div class="det" id="mapDet"></div>
     </div>
   </div>
-  <p class="disclaimer">“Average” land price is a very rough national blend — real prices swing from a few hundred dollars an acre of remote desert to millions an acre in Manhattan. Total US land ≈ 2.43 billion acres. Figures are for scale, not real estate advice.</p>
+  <p class="disclaimer">Price anchor: USDA’s 2024 average U.S. farm real-estate value, ~$4,170/acre (rounded to $4,000). Real prices range from a few hundred dollars an acre of remote desert to millions in Manhattan, so this is a scale illustration. Total U.S. land ≈ 2.43 billion acres (Census).</p>
 </div></section>
 
 <!-- ARMIES -->
@@ -284,7 +284,7 @@
     <div class="leftover" id="leftover"></div>
   </div>
 
-  <p class="disclaimer">Prices are rounded, real-world public estimates used purely to illustrate scale — team sale prices, company market caps, project costs, and program budgets shift constantly. They're here to make a trillion <em>feel</em> like something, not as financial figures. Net-worth and pay figures are approximate 2025 estimates.</p>
+  <p class="disclaimer">Figures are rounded public records: sale prices, official budgets, and reported revenue are fixed historical facts; the four company <b>market caps are as of mid-2026 and move daily</b>. Net worth (~$420B) and the pay package are 2025 figures. The International Space Station total is the widely-cited ~$150B lifetime cost.</p>
 </div></section>
 
 <!-- HEALTH -->
@@ -328,7 +328,7 @@
   <p class="sub">You've seen both sides of the same trillion. Now it's a judgment call, and it's yours.</p>
   <div class="grid cols-2">
     <div class="card"><div class="lab" style="color:var(--bil)">The case for</div><div class="small" style="font-size:15px; color:var(--ink); margin-top:8px">He built companies that put rockets in orbit and EVs on the road, employs hundreds of thousands, and the package only pays out if he hits enormous targets that make others rich too. Reward the upside, and you get more of it.</div></div>
-    <div class="card"><div class="lab" style="color:var(--tri)">The case against</div><div class="small" style="font-size:15px; color:var(--ink); margin-top:8px">No one person does a trillion dollars of work. That same sum is a year of Medicare, or food aid for a decade, or 83 years of Head Start. Concentrating it in one pair of hands is wealth removed from everyone else's.</div></div>
+    <div class="card"><div class="lab" style="color:var(--tri)">The case against</div><div class="small" style="font-size:15px; color:var(--ink); margin-top:8px">No one person does a trillion dollars of work. That same sum is a year of Medicare, or nine years of SNAP food aid, or 83 years of Head Start. Concentrating it in one pair of hands is wealth removed from everyone else's.</div></div>
   </div>
   <div class="elon-intro" style="margin-top:18px; background:linear-gradient(135deg,#1a1030,#10202e)">
     <div class="t2" style="font-size:clamp(18px,3vw,24px); color:var(--ink); line-height:1.5">We forget that giving <b>that much to one person</b><br>is exactly what we take away from <b>the rest of us.</b></div>
@@ -389,24 +389,24 @@ document.getElementById('rate').addEventListener('input',e=>setRate(+e.target.va
 
 /* ---------- SHOP ---------- */
 const catalog = [
-  {name:'A brand-new private jet (Gulfstream G700)', price:78e6},
-  {name:'The most expensive house ever sold', price:2.4e8},
-  {name:'A luxury mega-yacht', price:5e8},
-  {name:'An NBA team (e.g. recent sale)', price:6.1e9},
-  {name:'ALL 30 NBA teams combined', price:1.6e11},
-  {name:'ALL 32 NFL teams combined', price:2.25e11},
-  {name:'Twitter / X (2022 purchase price)', price:4.4e10},
-  {name:'End U.S. homelessness for a year (est.)', price:2e10},
-  {name:'A round-trip crewed Mars program (est.)', price:2.3e11},
-  {name:'The world’s largest aircraft carrier', price:1.3e10},
-  {name:'Disney (whole company, market cap)', price:1.7e11},
-  {name:'Nike (whole company, market cap)', price:6.5e10},
-  {name:'Give every U.S. public school $5M', price:5e11},
-  {name:'Boeing (whole company, market cap)', price:1.7e11},
-  {name:'A full year of NASA’s entire budget', price:2.5e10},
-  {name:'Fund clean water for the whole world (est.)', price:1.5e11},
-  {name:'McDonald’s (whole company, market cap)', price:2.1e11},
-  {name:'Every movie Hollywood makes in ~5 years', price:5e10},
+  {name:'A Gulfstream G700 private jet (list price)', price:78e6},
+  {name:'The priciest U.S. home ever sold (NYC, 2019)', price:2.38e8},
+  {name:'Jeff Bezos’s superyacht “Koru” (2023)', price:5e8},
+  {name:'The USS Gerald R. Ford aircraft carrier', price:1.33e10},
+  {name:'The Los Angeles Lakers (2025 sale)', price:1.0e10},
+  {name:'Twitter / X (2022 purchase)', price:4.4e10},
+  {name:'Microsoft’s buy of Activision Blizzard (2023)', price:6.87e10},
+  {name:'All 30 NBA teams combined (Forbes 2025)', price:1.6e11},
+  {name:'All 32 NFL teams combined (Forbes 2025)', price:2.27e11},
+  {name:'The International Space Station (total cost)', price:1.5e11},
+  {name:'One year of NASA’s budget (FY2026)', price:2.49e10},
+  {name:'One year of the NIH (FY2024)', price:4.7e10},
+  {name:'Apple’s entire annual revenue (FY2024)', price:3.91e11},
+  {name:'Give every U.S. public school (~100k) $5M', price:5e11},
+  {name:'Nike — whole company (market cap, mid-2026)', price:6.5e10},
+  {name:'Boeing — whole company (market cap, mid-2026)', price:1.72e11},
+  {name:'Disney — whole company (market cap, mid-2026)', price:1.78e11},
+  {name:'McDonald’s — whole company (market cap, mid-2026)', price:2.1e11},
 ];
 
 let budget = 1e12, owned = new Set();
