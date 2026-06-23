@@ -89,7 +89,10 @@
   .item.owned{border-color:var(--mil)}
   .item.owned button{background:var(--mil)}
   .cart{margin-top:18px; background:var(--panel2); border:1px dashed var(--line); border-radius:12px; padding:16px; min-height:60px}
-  .cart h4{margin:0 0 8px}
+  .cart h4{margin:0}
+  .cart-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+  .resetbtn{background:var(--panel2); border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:6px 14px; font-size:13px; cursor:pointer}
+  .resetbtn:hover{border-color:var(--accent); color:#fff}
   .cart .line{display:flex; justify-content:space-between; font-size:14px; color:var(--muted); padding:3px 0}
   .cart .leftover{margin-top:10px; font-weight:700}
   .cart .leftover.good{color:var(--mil)} .cart .leftover.bad{color:var(--tri)}
@@ -279,7 +282,7 @@
   <div class="items" id="items"></div>
 
   <div class="cart">
-    <h4>Your cart</h4>
+    <div class="cart-head"><h4>Your cart</h4><button id="cartReset" class="resetbtn">↺ Reset</button></div>
     <div id="cartLines"><p class="empty">Nothing yet. Try buying every NBA team, then notice how much is still left.</p></div>
     <div class="leftover" id="leftover"></div>
   </div>
@@ -442,6 +445,7 @@ function render(){
     left.textContent = rm>=0 ? `Still left over: ${fmt(rm)}` : `Over budget by ${fmt(-rm)}`;
   } else left.textContent='';
 }
+document.getElementById('cartReset').onclick=()=>{owned.clear();render();};
 document.querySelectorAll('.shop-controls .pill').forEach(p=>{
   p.onclick=()=>{document.querySelectorAll('.shop-controls .pill').forEach(x=>x.classList.remove('on'));p.classList.add('on');budget=+p.dataset.budget;owned.clear();render();};
 });
